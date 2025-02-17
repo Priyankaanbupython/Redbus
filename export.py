@@ -4,21 +4,6 @@ import streamlit as st
 import pandas as pd
 import sqlite3 
 
-
-# conn = mysql.connector.connect(
-
-#     host="localhost",
-
-#     user="root",
-
-#     port="3306",
-
-#     password="seenu2218",
-
-#     database="red_bus"
-
-# )
-
 conn = sqlite3.connect("redbus.db")
 
 table_name='redbus'
@@ -27,18 +12,6 @@ cursor = conn.cursor()
 
 writer = cursor 
 
-# query = "SELECT * FROM bus_details2"
-
-# query2 = f"SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '{table_name}' AND TABLE_SCHEMA = '{database}' ORDER BY ORDINAL_POSITION"
-
-# writer.execute(query)
-
-# view = cursor.fetchall()
-
-# data=pd.DataFrame(view)
-
-# writer.execute(query2)
-# s=cursor.fetchall() 
 from sqlalchemy import text,create_engine
 engine = create_engine("sqlite:///redbus.db")
 with engine.connect() as connection :
